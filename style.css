@@ -281,3 +281,141 @@ header h1 {
 .seccion-activa {
     animation: slideIn 0.5s ease;
 }
+
+/* ============================================= */
+/* ESTILOS DEL MODAL PARA LOS RÍOS              */
+/* ============================================= */
+
+/* Fondo oscuro semitransparente que cubre toda la pantalla */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+}
+
+/* Clase que se añade para mostrar el modal con animación */
+.modal-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Caja blanca del modal */
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 25px 20px;
+    max-width: 550px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-visible .modal-content {
+    transform: translateY(0);
+}
+
+/* Botón de cierre (X) */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+/* Encabezado del modal con ícono y título */
+.modal-header {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--azul-claro);
+}
+
+.modal-header h3 {
+    color: var(--azul-profundo);
+    margin-top: 10px;
+    font-size: 1.6em;
+}
+
+/* Descripción */
+.modal-descripcion {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Sección de datos */
+.modal-datos {
+    background: #f0f8ff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-datos h4, .modal-historia h4 {
+    color: var(--azul-profundo);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.modal-datos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-datos li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+/* Sección de historia */
+.modal-historia {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 4px solid var(--verde-acuatico);
+}
+
+.modal-historia p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Ajuste para celulares pequeños */
+@media (max-width: 400px) {
+    .modal-content {
+        padding: 20px 15px;
+        max-height: 85vh;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.4em;
+    }
+}
