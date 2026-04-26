@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a5276">
+    <title>Ríos y Aguas de Mayabeque - Güines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wave-header">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#1a5276" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+        </svg>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <div class="logo-acuatico">
+                <i class="fas fa-water"></i>
+            </div>
+            <h1>Aguas de Mayabeque</h1>
+            <p class="subtitulo">Cuenca hidrográfica de Güines</p>
+        </header>
+        
+        <nav class="menu-principal">
+            <button class="menu-btn active" data-seccion="rios-principales">
+                <i class="fas fa-river"></i> Ríos
+            </button>
+            <button class="menu-btn" data-seccion="mapa-cuenca">
+                <i class="fas fa-map-marked-alt"></i> Mapa
+            </button>
+            <button class="menu-btn" data-seccion="historia">
+                <i class="fas fa-history"></i> Historia
+            </button>
+            <button class="menu-btn" data-seccion="ecologia">
+                <i class="fas fa-leaf"></i> Ecología
+            </button>
+            <button class="menu-btn" data-seccion="galeria">
+                <i class="fas fa-camera"></i> Galería
+            </button>
+        </nav>
+        
+        <main id="contenido-principal">
+            <!-- Cargando -->
+            <div class="loading">
+                <div class="ola-carga">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 - Proyecto sobre las aguas de Mayabeque</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
