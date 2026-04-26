@@ -1,0 +1,22 @@
+{
+  "name": "Aguas de Mayabeque - Güines",
+  "short_name": "Aguas Mayabeque",
+  "description": "Multimedia interactiva sobre los ríos y aguas de Mayabeque en Güines, Cuba. Creado por Ing. Yudel Noda Cepero.",
+  "start_url": "/aguas-mayabeque/",
+  "display": "standalone",
+  "background_color": "#1a5276",
+  "theme_color": "#1a5276",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icono-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
