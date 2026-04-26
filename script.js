@@ -225,6 +225,104 @@ document.querySelectorAll('.menu-btn').forEach(btn => {
         cargarContenido(seccion);
     });
 });
+// --- NUEVA FUNCIÓN: Mostrar detalles del río en una ventana modal ---
+
+// 1. Base de datos con la información de cada río
+const infoRios = {
+    mayabeque: {
+        nombre: 'Río Mayabeque',
+        descripcion: 'Es el río más importante de la provincia, a la cual da nombre. Sus aguas son el centro de la historia y el desarrollo de Güines.',
+        datos: {
+            'Longitud': '53 km (algunas fuentes mencionan hasta 73 km)',
+            'Nacimiento': 'Estribaciones de las Escaleras de Jaruco, al norte de la provincia.',
+            'Desembocadura': 'Playa Mayabeque, en Melena del Sur, Golfo de Batabanó.',
+            'Cuenca': '1,231 km²',
+            'Afluentes': 'Río Güines, Río San Juan, entre otros.',
+            'Importancia': 'Sus aguas son utilizadas para el riego de cultivos como la caña de azúcar y los cítricos a través de la presa Pedroso y el canal Pedroso-Güira.'
+        },
+        historia: 'La mención más antigua del río data de 1509, cuando era conocido como Onicajinal. En sus orillas se fundó la ciudad de Güines y sus aguas fueron testigo del desarrollo de la industria azucarera cubana.',
+        icono: 'fa-river'
+    },
+    guines: {
+        nombre: 'Río Güines',
+        descripcion: 'Un afluente clave que atraviesa la ciudad de Güines y es fundamental para la agricultura local.',
+        datos: {
+            'Longitud': '45 km',
+            'Nacimiento': 'Nace en las cercanías del municipio de Madruga.',
+            'Desembocadura': 'Desemboca en el río Mayabeque, a su paso por la ciudad de Güines.',
+            'Importancia': 'Es una fuente vital de agua para el riego de cultivos en la región, especialmente para la caña de azúcar. Su caudal ha sido aprovechado históricamente mediante sistemas de irrigación.'
+        },
+        historia: 'El río ha estado ligado al desarrollo de Güines desde su fundación. Sus aguas fueron utilizadas para mover los ingenios azucareros y, más tarde, para el moderno sistema de riego de la zona.',
+        icono: 'fa-water'
+    },
+    'san-juan': {
+        nombre: 'Río San Juan',
+        descripcion: 'Un afluente que, aunque más pequeño, es representativo de la red hidrográfica que nutre al Mayabeque.',
+        datos: {
+            'Longitud': '20-28 km',
+            'Nacimiento': 'Se origina en zonas de manantiales al norte de la provincia.',
+            'Desembocadura': 'Desemboca en el río Mayabeque, aguas abajo de Güines.',
+            'Importancia': 'Su caudal es esencial para el riego agrícola en su valle, sustentando pequeñas y medianas fincas que abastecen a la región.'
+        },
+        historia: 'Fue escenario de asentamientos aborígenes y su caudal ha sido un recurso constante para las comunidades agrícolas de la zona.',
+        icono: 'fa-faucet'
+    }
+};
+
+// 2. Función para mostrar el modal con la información del río seleccionado
+function mostrarDetalleRio(rioId) {
+    const rio = infoRios[rioId];
+    if (!rio) return;
+
+    // Construir el HTML de la ventana emergente
+    const modalHTML = `
+        <div id="modal-rio" class="modal-overlay">
+            <div class="modal-content">
+                <span class="modal-close" onclick="cerrarModal()">&times;</span>
+                
+                <div class="modal-header">
+                    <i class="fas ${rio.icono}" style="font-size: 2.5em; color: var(--azul-medio);"></i>
+                    <h3>${rio.nombre}</h3>
+                </div>
+                
+                <p class="modal-descripcion">${rio.descripcion}</p>
+                
+                <div class="modal-datos">
+                    <h4><i class="fas fa-info-circle"></i> Datos Principales</h4>
+                    <ul>
+                        ${Object.entries(rio.datos).map(([key, value]) => `
+                            <li><strong>${key}:</strong> ${value}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+                
+                <div class="modal-historia">
+                    <h4><i class="fas fa-history"></i> Reseña Histórica</h4>
+                    <p>${rio.historia}</p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Insertar el modal en el cuerpo del documento
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    // Pequeño retraso para que la animación de entrada funcione
+    setTimeout(() => {
+        document.getElementById('modal-rio').classList.add('modal-visible');
+    }, 10);
+}
+
+// 3. Función para cerrar el modal
+function cerrarModal() {
+    const modal = document.getElementById('modal-rio');
+    if (modal) {
+        modal.classList.remove('modal-visible');
+        // Eliminar el modal después de la animación de salida
+        setTimeout(() => {
+            modal.remove();
+        }, 300);
+    }
+}
 
 // Función para mostrar detalles del río (puedes expandirla)
 function mostrarDetalleRio(rio) {
