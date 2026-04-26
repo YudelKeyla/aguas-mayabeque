@@ -130,7 +130,13 @@ const datosMayabeque = {
                 </div>
             </div>
         `
+
     },
+'galeria': {
+    titulo: 'Galería',
+    icono: 'fa-camera',
+    contenido: `<p>Próximamente...</p>`
+},
 'creditos': {
     titulo: 'Información del Proyecto',
     icono: 'fa-users',
