@@ -130,7 +130,54 @@ const datosMayabeque = {
                 </div>
             </div>
         `
-    }
+    },
+'creditos': {
+    titulo: 'Información del Proyecto',
+    icono: 'fa-users',
+    contenido: `
+        <div style="padding: 20px;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <i class="fas fa-water" style="font-size: 4em; color: var(--azul-medio);"></i>
+                <h2 style="color: var(--azul-profundo); margin-top: 15px;">Aguas de Mayabeque</h2>
+                <p style="color: #666;">Multimedia educativa sobre los ríos de Güines</p>
+            </div>
+            
+            <div style="display: grid; gap: 20px; max-width: 500px; margin: 0 auto;">
+                <div style="background: linear-gradient(135deg, var(--blanco-espuma), white); padding: 20px; border-radius: 15px; border-left: 5px solid var(--azul-medio); box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--azul-profundo);">
+                        <i class="fas fa-user-cog"></i> Creador
+                    </h3>
+                    <p style="font-size: 1.2em; margin-top: 10px; font-weight: bold;">Ing. Yudel Noda Cepero</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, var(--blanco-espuma), white); padding: 20px; border-radius: 15px; border-left: 5px solid var(--verde-acuatico); box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--azul-profundo);">
+                        <i class="fas fa-user-edit"></i> Autor
+                    </h3>
+                    <p style="font-size: 1.2em; margin-top: 10px; font-weight: bold;">Jorge Yadel Noda Cepero</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, var(--blanco-espuma), white); padding: 20px; border-radius: 15px; border-left: 5px solid #e67e22; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--azul-profundo);">
+                        <i class="fas fa-chalkboard-teacher"></i> Tutora
+                    </h3>
+                    <p style="font-size: 1.2em; margin-top: 10px; font-weight: bold;">Mirian Rosa</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; padding: 15px; background: var(--blanco-espuma); border-radius: 10px;">
+                <p style="color: #666;">
+                    <i class="fas fa-calendar-alt"></i> 
+                    Proyecto realizado en abril de 2026
+                </p>
+                <p style="color: #666; margin-top: 5px;">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Güines, Provincia Mayabeque, Cuba
+                </p>
+            </div>
+        </div>
+    `
+}
 };
 
 // Función para cargar contenido
